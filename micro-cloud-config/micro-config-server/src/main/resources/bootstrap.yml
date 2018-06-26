@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: master   #master   slave1
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master  #分支
+      server:
+        git:
+          uri:   #配置gitlib仓库地址  配置你的仓库地址
+          search-paths:  test-respo,dev-respo,pro-respo   #git仓库地址下的相对地址，可以配置多个，用,分割
+          username:    #gitlib账号 配置你的仓库用户名
+          password:                #gitlib密码  配置你的仓库密码
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:micro-service@jenpin.eks.master:8100/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+
+#刷新时，关闭安全验证
+management:
+  security:
+    enabled: false

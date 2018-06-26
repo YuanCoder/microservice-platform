@@ -1,0 +1,7 @@
+
+server:
+  port: 8201
+
+logging:
+  path: ./logs
+  file: configserver-slave1.log

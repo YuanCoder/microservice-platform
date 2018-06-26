@@ -1,0 +1,14 @@
+
+server:
+  port: 8101
+
+eureka:
+  client:
+    service-url:
+#     defaultZone: http://admin:hqjymicro@10.0.98.17:8100/eureka/,http://admin:hqjymicro@10.0.98.17:8102/eureka/
+      defaultZone: http://admin:hqjymicro@micro1:8100/eureka/
+  instance:
+    hostname: micro2 #hqjy.eks.slave1  ${spring.cloud.client.ipAddress}
+logging:
+  path: ./logs
+  file: application-slave1.log

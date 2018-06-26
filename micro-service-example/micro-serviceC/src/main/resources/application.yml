@@ -1,0 +1,22 @@
+server:
+  port: 8803
+
+spring:
+  cloud:
+    bus:
+      trace:
+        enabled: true   # 开启消息跟踪
+  sleuth:
+    sampler:
+      percentage: 1.0 #制定需采样的百分比，默认为0.1，即10%，这里为了测试配置为1
+#    name: CalculatorServer                        # 指定发布的微服务名（以后调用时，只需该名称即可访问该服务）
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672                                    # 注意端口是5672，不是15672
+    username: guest
+    password: guest
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true                     # 设置微服务调用地址为IP优先（缺省为false）

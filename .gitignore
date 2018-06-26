@@ -1,0 +1,10 @@
+/.idea
+.ideagit
+*.iml
+*.log
+*.class
+*.classpath
+/target
+*/target
+*/*/target
+/tmp

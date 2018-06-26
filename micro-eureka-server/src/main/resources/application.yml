@@ -1,0 +1,35 @@
+############################################################################
+######################         eureka 注册中心                         #######################
+############################################################################
+
+server:
+  tomcat:
+    max-threads: 800    # tomcat最大线程数，默认为200
+    uri-encoding: utf-8   # tomcat的URI编码
+    basedir: ./tmp   # 存放Tomcat的日志、Dump等文件的临时文件夹
+
+spring:
+  profiles:
+    active: slave1   #master   slave1    slave2
+  application:
+    name: eureka-server
+
+security:
+  basic:
+    enabled: true # 启用认证
+  user:
+    name: admin
+    password: hqjymicro
+
+eureka:
+  environment: HQ-Test
+  datacenter: HQ-DataCenter
+  server:
+    enable-self-preservation: true  # 开启自我保护机制
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+  instance:
+#    prefer-ip-address: true   #   IP就是注册到Eureka Server上的IP 而不是hostname
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}

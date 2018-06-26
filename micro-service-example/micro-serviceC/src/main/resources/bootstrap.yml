@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: service-c        # 指定配置中心配置文件的{application}
+
+feign:
+  hystrix:
+    enabled: true #开启hystrix
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 7000  #Hystrix的超时时间重设为7秒,默认1秒 防止feign 第一次调用失败
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:micro-service@jenpin.eks.master:8100/eureka/

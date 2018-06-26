@@ -1,0 +1,46 @@
+
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 8500
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:micro-service@jenpin.eks.master:8100/eureka/  #注册 中心已经开启认证
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+app:
+  msg: this is test msg
+
+
+#zuul.routes.<serviceId>=<path>，其中<serviceId>用来指定路由的具体服务名，<path>用来配置匹配的请求表达式。
+zuul:
+  sensitive-headers:  #设为空,这是一个屏蔽的黑名单，（默认不为空，会屏蔽Cookie，获取不到session）
+  add-host-header: true #API网关在进行请求路由转发前为请求设置Host头信息,防止页面重定向问题出现
+  ignored-patterns: /**/mic/** #不给mic接口创建路由
+ # ignored-services: service-a #忽略掉指定的服务，不为其创建路由
+  routes:
+    api-gateway: /gateway/**  #方式一
+    gateway:
+      path: /api-gateway/**   #方式二
+      service-id: api-gateway
+  #通过URL路由的方式  超时配置如下:
+  host:
+    connect-timeout-millis: 10000 #请求链接超时时间 默认2000
+    socket-timeout-millis: 60000 #会话保持超时时间 默认10000
+    max-total-connections: 500 #最大链接数 默认200
+#通过service-id 路由 配置超时配置如下:
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 12000  #设置API 网 关中路由转发请求的HystrixCommand执行超时时间， 单位为毫秒超时时间重设为12秒,默认1秒
+ribbon:
+  ConnectTimeout: 8000 #设置 置路由转发请求的时候，创建请求连接的超时时间(超时指连接时间)
+  ReadTimeout: 8000 #设置路由转发请求的超时时间(它的超时指的是对请求连接建立之后的处理时间。)

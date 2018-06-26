@@ -1,0 +1,25 @@
+
+server:
+  port: 8801
+
+spring:
+  application:
+    name: service-a        # 指定配置中心配置文件的{application}
+  cloud:
+    config:
+      #uri: http://127.0.0.1:4100/  # 指定配置中心的地址
+      profile: dev                # 指定配置中心配置文件的{profile}
+      label: master                # 指定配置中心配置文件的{label}
+      discovery:
+        enabled: true                    # 使用注册中心里面已注册的配置中心
+        serviceId: config-server   # 指定配置中心注册到注册中心的serviceId
+    bus:
+      trace:
+        enabled: true   # 开启消息跟踪
+  sleuth:
+    sampler:
+      percentage: 1.0 #制定需采样的百分比，默认为0.1，即10%，这里为了测试配置为1
+eureka:                   # 设置微服务调用地址为IP优先（缺省为false）
+  client:
+    serviceUrl:
+      defaultZone: http://admin:micro-service@jenpin.eks.master:8100/eureka/

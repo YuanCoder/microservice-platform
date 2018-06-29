@@ -7,6 +7,7 @@ Java8
 Eureka 服务发现与注册中心  
 SpringCloudBus 消息总线   
 SpringCloudConfig 配置中心  （后期采用Apollo）
+SpringAdmin 服务监控
 Zuul 网关   
 Feign  Http客户端  
 Hystrix 断路器

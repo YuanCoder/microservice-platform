@@ -1,7 +1,3 @@
-############################################################################
-######################         eureka 注册中心                         #######################
-############################################################################
-
 server:
   tomcat:
     max-threads: 800    # tomcat最大线程数，默认为200
@@ -10,7 +6,7 @@ server:
 
 spring:
   profiles:
-    active: slave1   #master   slave1    slave2
+    active: single   #master   slave1 single
   application:
     name: eureka-server
 
@@ -19,16 +15,15 @@ security:
     enabled: true # 启用认证
   user:
     name: admin
-    password: hqjymicro
+    password: jenpin
 
 eureka:
-  environment: HQ-Test
-  datacenter: HQ-DataCenter
+  environment: Jenpin
+  datacenter: 服务发现与注册中心
   server:
-    enable-self-preservation: true  # 开启自我保护机制
-  client:
-    register-with-eureka: true
-    fetch-registry: true
+    enable-self-preservation: false  # 关闭自我保护机制
+    eviction-interval-timer-in-ms: 4000 #清理间隔（单位毫秒，默认是60*1000）
+
 
   instance:
 #    prefer-ip-address: true   #   IP就是注册到Eureka Server上的IP 而不是hostname

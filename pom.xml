@@ -16,6 +16,7 @@
         <module>micro-boot-admin</module>
         <module>micro-api-gateway</module>
         <module>micro-sleuth-server</module>
+        <module>micro-common</module>
     </modules>
 
     <parent>

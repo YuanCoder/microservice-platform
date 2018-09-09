@@ -22,4 +22,7 @@ spring:
 eureka:                   # 设置微服务调用地址为IP优先（缺省为false）
   client:
     serviceUrl:
-      defaultZone: http://admin:micro-service@jenpin.eks.master:8100/eureka/
+      defaultZone: http://admin:jenpin@idrinkjava.cn:8100/eureka/
+
+info:
+  msg: hahaha

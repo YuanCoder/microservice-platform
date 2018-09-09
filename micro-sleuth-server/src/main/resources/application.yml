@@ -5,4 +5,4 @@ spring:
   application:
     name: micro-sleuth-server
   profiles:
-    active: es #采用的elasticsearch
+    active: mysql #采用的elasticsearch

@@ -10,16 +10,16 @@ spring:
   application:
     name: micro-sleuth-server
   rabbitmq:
-    host: 10.0.98.17
+    host: 127.0.0.1
     port: 5672                                    # 注意端口是5672，不是15672
-    username: hqjy
-    password: hqjy2017
+    username: guest
+    password: guest
   sleuth:
     enabled: false  #表示当前程序不使用sleuth
   datasource:
-    url: jdbc:mysql://10.0.98.6:3306/micro-db?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/micro-db?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
-    password: root
+    password: yuan
     driver-class-name: com.mysql.jdbc.Driver
     initialize: true
     continue-on-error: true
@@ -27,7 +27,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:hqjymicro@hqjy.eks.master:8100/eureka/
+      defaultZone: http://admin:jenpin@idrinkjava.cn:8100/eureka/
   instance:
       instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
       prefer-ip-address: true                     # 设置微服务调用地址为IP优先（缺省为false）

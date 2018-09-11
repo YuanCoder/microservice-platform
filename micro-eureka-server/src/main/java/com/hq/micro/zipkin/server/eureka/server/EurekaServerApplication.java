@@ -3,6 +3,7 @@ package com.hq.micro.zipkin.server.eureka.server;/**
  */
 
 import com.netflix.appinfo.InstanceInfo;
+import com.netflix.eureka.lease.LeaseManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -37,6 +38,8 @@ public class EurekaServerApplication {
           服务下线（cancel）
           服务租约（renew）
           服务剔除（evict）
+         LeaseManager 接口定义了应用服务实例（写操作的相关方法）在服务中心的上述4个操作方法
+
 */
 
 

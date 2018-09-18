@@ -23,8 +23,6 @@ eureka:
   server:
     enable-self-preservation: false  # 关闭自我保护机制
     eviction-interval-timer-in-ms: 4000 #清理间隔（单位毫秒，默认是60*1000）
-
-
   instance:
 #    prefer-ip-address: true   #   IP就是注册到Eureka Server上的IP 而不是hostname
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}

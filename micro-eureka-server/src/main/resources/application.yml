@@ -22,7 +22,7 @@ eureka:
   datacenter: 服务发现与注册中心
   server:
     enable-self-preservation: false  # 关闭自我保护机制
-    wait-time-in-ms-when-sync-empty: 0 #在Eureka服务器获取不到集群里对等服务器上的实例时，需要等待的时间，单位为毫秒，默认为1000 * 60 * 5
+    #wait-time-in-ms-when-sync-empty: 0 #在Eureka服务器获取不到集群里对等服务器上的实例时，需要等待的时间，单位为毫秒，默认为1000 * 60 * 5
     response-cache-auto-expiration-in-seconds: 60 #eureka 注册表换存过期时间，默认为180秒
     eviction-interval-timer-in-ms: 4000 #清理间隔（单位毫秒，默认是60*1000）这里指定EvictionTask定时任务的调度频率，用于剔除过期实例
     peer-node-connect-timeout-ms: 1000 #连接eureka对等节点服务器复制的超时的时间（默认200ms）

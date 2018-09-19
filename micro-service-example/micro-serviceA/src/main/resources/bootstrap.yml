@@ -23,6 +23,8 @@ eureka:                   # 设置微服务调用地址为IP优先（缺省为fa
   client:
     serviceUrl:
       defaultZone: http://admin:jenpin@idrinkjava.cn:8100/eureka/
+    registry-fetch-interval-seconds: 5 #从eureka服务器注册表中获取注册信息的时间间隔（s），默认为30秒
+
 
 info:
   msg: hahaha

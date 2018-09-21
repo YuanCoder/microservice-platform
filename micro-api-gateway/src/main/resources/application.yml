@@ -10,14 +10,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://admin:micro-service@jenpin.eks.master:8100/eureka/  #注册 中心已经开启认证
+    healthcheck:
+      enabled: true  # 开启健康检查（依赖spring-boot-starter-actuator）
   instance:
     prefer-ip-address: true
     instanceId: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
     #lease-renewal-interval-in-seconds: 5      # 心跳时间，即服务续约间隔时间（缺省为30s）
     #lease-expiration-duration-in-seconds: 10  # 发呆时间(当某实例超过这个时间没有发送心跳，则任为该实例失效)，即服务续约到期时间（缺省为90s）
-    client:
-        healthcheck:
-          enabled: true                           # 开启健康检查（依赖spring-boot-starter-actuator）
+
 app:
   msg: this is test msg
 

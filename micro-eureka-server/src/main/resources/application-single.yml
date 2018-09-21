@@ -8,7 +8,6 @@ eureka:
     fetch-registry: false # 不需要检索服务
     service-url:
 #     defaultZone: http://admin:hqjymicro@10.0.98.17:8100/eureka/,http://admin:hqjymicro@10.0.98.17:8102/eureka/
-#      defaultZone: http://admin:jenpin@106.14.70.126:8100/eureka/
       defaultZone: http://admin:jenpin@127.0.0.1:8100/eureka/
 #  instance:
 #    hostname: eks-single

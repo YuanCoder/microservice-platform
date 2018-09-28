@@ -18,7 +18,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:micro-service@jenpin.eks.master:8100/eureka/
+      defaultZone: http://admin:jenpin@idrinkjava.cn:8100/eureka/
     registry-fetch-interval-seconds: 5 #从eureka服务器注册表中获取注册信息的时间间隔（s），默认为30秒
 server:
   port: 8802

@@ -10,7 +10,7 @@ spring:
         git:
           uri: https://github.com/YuanCoder/SpringcloudConfig #配置gitlib仓库地址  配置你的仓库地址
           search-paths: test-respo,dev-respo,pro-respo   #git仓库地址下的相对地址，可以配置多个，用,分割
-          username: 1073625256@qq.com   #gitlib账号 配置你的仓库用户名
+          username:    #gitlib账号 配置你的仓库用户名
           password:            #gitlib密码  配置你的仓库密码
   rabbitmq:
     host: 127.0.0.1

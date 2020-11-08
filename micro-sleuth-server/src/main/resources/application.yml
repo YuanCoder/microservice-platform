@@ -1,8 +1,0 @@
-server:
-  port: 8600
-
-spring:
-  application:
-    name: micro-sleuth-server
-  profiles:
-    active: mysql #采用的elasticsearch

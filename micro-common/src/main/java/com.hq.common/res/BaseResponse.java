@@ -1,4 +1,4 @@
-package com.crossoverJie.sbcorder.common.res;
+package com.hq.common.res;
 
 
 import com.crossoverJie.sbcorder.common.enums.StatusEnum;

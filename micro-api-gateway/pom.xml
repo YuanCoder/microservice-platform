@@ -8,7 +8,7 @@
     <artifactId>micro-api-gateway</artifactId>
     <parent>
         <artifactId>microservice-platform</artifactId>
-        <groupId>com.hq.cloud</groupId>
+        <groupId>com.jenpin.cloud</groupId>
         <version>1.0.0</version>
     </parent>
 

@@ -10,7 +10,7 @@
 
     <modules>
         <module>micro-eureka-server</module>
-        <module>micro-service-example</module>
+<!--        <module>micro-service-example</module>-->
 <!--        <module>micro-cloud-bus</module>-->
 <!--        <module>micro-cloud-config</module>-->
         <module>micro-boot-admin</module>
